@@ -31,3 +31,4 @@ We've updated Craft to run comfortably in any environment that we send it to.  A
 - Added copies of general.php and db.php in each environment folder
 - Updated /craft/config/general.php to merge in environment specific config settings
 - Updated /craft/config/db.php to merge in environment specific database settings
+- Set devMode to true in local and dev environments
