@@ -1,0 +1,29 @@
+
+
+# MISC FILES
+*.DS_Store
+*.tmproj
+*.sublime-workspace
+*.sublime-project
+logs/*
+
+# LOCAL CONFIG SETTINGS
+# Exclude local config files so we don't overwrite other local setups.
+# Leave example files that can be renamed to get setup
+craft/config/local/*
+!craft/config/local/db.example.php
+!craft/config/local/general.example.php
+
+# IMAGE FOLDERS 
+# Commented out for convenience. Probably worth excluding as repo gets larger.
+# /public_html/content/*
+# !/public_html/content/index.html
+
+# CRAFT STORAGE STUFF
+# It's probably safe to ignore the following in the storage folders.
+# The rest of the items in the storage folder are up to us...
+craft/storage/runtime/*
+craft/storage/logs/*
+craft/storage/logs/backups/*
+craft/storage/phperrors.log
+
