@@ -12,7 +12,7 @@ $dbCustomConfig = array(
 );
 
 // Merge environment-specific db info
-if (is_array($dbEnvironmentConfig = require_once(CRAFT_CONFIG_PATH . ENVIRONMENT . '/db.php')))
+if (is_array($dbEnvironmentConfig = require_once(CRAFT_CONFIG_PATH . ENV . '/db.php')))
 {
 	$dbCustomConfig = array_merge($dbCustomConfig, $dbEnvironmentConfig);
 }

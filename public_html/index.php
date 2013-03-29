@@ -3,32 +3,30 @@
 // Path to your craft/ folder
 $craftPath = '../craft';
 
+// Define protocol relative site URL
+define('CRAFT_SITE_URL', 	'//' . $_SERVER['SERVER_NAME']);
+
 // Setup environment-friendly configs
 switch ($_SERVER['HTTP_HOST']) {		
 	case 'domain.com' :
-		$environment = 'live';
+		define('ENV', 'live');
 		break;
 
 	case 'dev.domain.com' :
-		$environment = 'dev';
+		define('ENV', 'dev');
 		break;
 
 	default :
-		$environment = 'local';
+		define('ENV', 'local');
 		break;
 }
-
-// Set environment
-define('ENVIRONMENT', $environment);
-
-// Set config path to current environment
-define('CRAFT_CONFIG_PATH', realpath("{$craftPath}/config").'/');
 
 // Move plugins path to right above web root
 define('CRAFT_PLUGINS_PATH', realpath(dirname(__FILE__) . "/../plugins").'/');
 
 // Move templates path to right above web root
 define('CRAFT_TEMPLATES_PATH', realpath(dirname(__FILE__) . "/../templates").'/');
+
 
 
 // Do not edit below this line

@@ -8,11 +8,11 @@
  */
 
 $customGeneralConfig = array(
-
+	'resetPasswordPath' => 'members/reset-password.html'
 );
 
 // Merge any environment-specific custom config settings 
-if (is_array($customEnvironmentConfig = require_once(CRAFT_CONFIG_PATH . ENVIRONMENT . '/general.php')))
+if (is_array($customEnvironmentConfig = require_once(CRAFT_CONFIG_PATH . ENV . '/general.php')))
 {
 	$customGeneralConfig = array_merge($customGeneralConfig, $customEnvironmentConfig);
 }
