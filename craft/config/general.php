@@ -8,7 +8,7 @@
  */
 
 $customGeneralConfig = array(
-	'resetPasswordPath' => 'members/reset-password.html'
+	'cpTrigger' => 'admin'
 );
 
 // Merge any environment-specific custom config settings 
