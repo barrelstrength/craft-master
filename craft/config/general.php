@@ -8,7 +8,21 @@
  */
 
 $customGeneralConfig = array(
-	'resetPasswordPath' => 'members/reset-password.html'
+
+	// Triggers
+	'cpTrigger' 				=> 'admin',
+	'resourceTrigger' 	=> 'resources',
+	'actionTrigger' 		=> 'actions',
+	'pageTrigger' 			=> 'p',
+
+	// User account related paths
+	'loginPath' 				=> 'login',
+	'logoutPath' 				=> 'logout',
+	'resetPasswordPath' => 'members/reset-password.html',
+
+	// Manage our routes in the craft/config/routes.php file
+	'siteRoutesSource' 	=> 'file',
+
 );
 
 // Merge any environment-specific custom config settings 

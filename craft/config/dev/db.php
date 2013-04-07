@@ -7,6 +7,6 @@
 return array(
 	'server' 		=> 'localhost',
 	'user' 			=> '',
-	'password' 		=> '',
-	'database' 		=> '',
+	'password' 	=> '',
+	'database' 	=> '',
 );

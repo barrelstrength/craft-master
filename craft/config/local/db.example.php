@@ -5,8 +5,8 @@
  */
 
 return array(
-	'server' 		=> 'localhost',
-	'user' 			=> '',
-	'password' 		=> '',
-	'database' 		=> '',
+  'server'    => 'localhost',
+  'user'      => '',
+  'password'  => '',
+  'database'  => '',
 );
