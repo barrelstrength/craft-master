@@ -239,6 +239,17 @@ FileETag None
 </IfModule>
 
 
+# ----------------------------------------------------------------------
+# Force https:// for the Control Panel
+# Exclude our local and  development environment if we don't have ssl setup there
+# ----------------------------------------------------------------------
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} !^local\.(.*)$ [NC]
+RewriteCond %{HTTP_HOST} !^dev\.(.*)$ [NC]
+RewriteRule ^(admin/.*)$ https://%{SERVER_NAME}/$1 [R=301,L]
+
+
 # ------------------------------------------------------------
 # Remove trailing slashes from the end of the URL
 # This rule must come before removal of index.php from the URL
