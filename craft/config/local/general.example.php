@@ -3,8 +3,8 @@
 return array(
 
   // Make debugging easier
-  'devMode'                 => true,
-  'translationDebugOutput'  => false,
+  'devMode'                   => true,
+  'translationDebugOutput'    => false,
 
   // Member login info duration
   // http://www.php.net/manual/en/dateinterval.construct.php

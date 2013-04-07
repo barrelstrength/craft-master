@@ -15,11 +15,6 @@ $customGeneralConfig = array(
 	'actionTrigger' 		=> 'actions',
 	'pageTrigger' 			=> 'p',
 
-	// User account related paths
-	'loginPath' 				=> 'login',
-	'logoutPath' 				=> 'logout',
-	'resetPasswordPath' => 'members/reset-password.html',
-
 	// Manage our routes in the craft/config/routes.php file
 	'siteRoutesSource' 	=> 'file',
 

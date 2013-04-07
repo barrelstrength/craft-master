@@ -10,11 +10,15 @@ We've updated Craft to run comfortably in any environment that we send it to.  A
 - Define environment variable in index.php
 - Move plugin folder to just above web root for easier access
 - Move template folder to just above web root for easier access
-- Added folders for default environents: local, dev, live
+- Added folders for default environments: local, dev, live
 - Added copies of general.php and db.php in each environment folder
 - Updated /craft/config/general.php to merge in environment specific config settings
 - Updated /craft/config/db.php to merge in environment specific database settings
-- Set devMode to true in local and dev environments
+- Moved some config overrides to /craft/config/general.php for easier access
+- Added some config overrides to general.php in local and dev environments
+  - Increase logged in user session duration to 101 years
+  - Set devMode to true
+
 
 ## Custom .htaccess
 We've added a handful of things to our base .htaccess file. This assumes certain server settings are turned on and may throw errors if they are not.  If that sounds like a headache, you may just want to roll with the default .htaccess provided by Craft.
@@ -26,6 +30,7 @@ We've added a handful of things to our base .htaccess file. This assumes certain
 - Set Expires headers
 - ETag removal
 - Remove www from URL
+- Force SSL when using dashboard
 - Example code to remove trailing slashes from URL
 - Prevent 404 errors for non-existing redirected folders
 - Set UTF-8 encoding
