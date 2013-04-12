@@ -21,7 +21,7 @@ $customGeneralConfig = array(
 );
 
 // Merge any environment-specific custom config settings 
-if (is_array($customEnvironmentConfig = require_once(CRAFT_CONFIG_PATH . ENV . '/general.php')))
+if (is_array($customEnvironmentConfig = @include(CRAFT_CONFIG_PATH . ENV . '/general.php')))
 {
 	$customGeneralConfig = array_merge($customGeneralConfig, $customEnvironmentConfig);
 }
