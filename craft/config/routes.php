@@ -16,7 +16,7 @@
  * The URL patterns are regular expressions. If you want to capture portions of the URL and
  * make them available to your template, use named subpatterns. For example:
  *
- *     'blog\/archive\/(?P<year>\d{4})' => 'blog/_archive',
+ *     'blog/archive/(?P<year>\d{4})' => 'blog/_archive',
  *
  * That example would match URIs such as "blog/archive/2012", and pass the request along to
  * the blog/_archive template, providing it a ‘year’ variable set to the value “2012”.

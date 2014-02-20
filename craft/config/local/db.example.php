@@ -1,12 +1,9 @@
 <?php
 
-/**
- * Environment Database Info
- */
-
+// Local database info
 return array(
-  'server'    => 'localhost',
-  'user'      => '',
-  'password'  => '',
-  'database'  => '',
+	'server' 		=> 'localhost',
+	'user' 			=> 'username',
+	'password' 	=> 'password',
+	'database' 	=> 'database_name'
 );

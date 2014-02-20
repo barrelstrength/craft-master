@@ -7,14 +7,34 @@
  * You can see a list of the default settings in craft/app/etc/config/defaults/db.php
  */
 
-$dbCustomConfig = array(
-	'tablePrefix' 	=> 'craft'
+$customDbConfig = array(
+	
+  '*' => array(
+  	// Use the same prefix in all environments
+  	'tablePrefix' 	=> 'craft',
+
+  	// Live database info
+  	'server' 		=> 'localhost',
+		'user' 			=> 'username',
+		'password' 	=> 'password',
+		'database' 	=> 'database_name'
+  ),
+
+  // Dev database info
+	'dev' => array(
+  	'server' 		=> 'localhost',
+		'user' 			=> 'username',
+		'password' 	=> 'password',
+		'database' 	=> 'database_name'
+  )
+
 );
 
-// Merge environment-specific db info
-if (is_array($dbEnvironmentConfig = @include(CRAFT_CONFIG_PATH . ENV . '/db.php')))
+// If a local db file exists, merge the local db settings
+if (is_array($customLocalDbConfig = @include(CRAFT_CONFIG_PATH . 'local/db.php')))
 {
-	$dbCustomConfig = array_merge($dbCustomConfig, $dbEnvironmentConfig);
+	$customGlobalDbConfig = array_merge($customDbConfig['*'], $customLocalDbConfig);
+  $customDbConfig['*'] = $customGlobalDbConfig;
 }
 
-return $dbCustomConfig;
+return $customDbConfig;
