@@ -9,24 +9,24 @@
 
 $customDbConfig = array(
 	
-  '*' => array(
-  	// Use the same prefix in all environments
-  	'tablePrefix' 	=> 'craft',
+	'*' => array(
+		// Use the same prefix in all environments
+		'tablePrefix' 	=> 'craft',
 
-  	// Live database info
-  	'server' 		=> 'localhost',
+		// Live database info
+		'server' 		=> 'localhost',
 		'user' 			=> 'username',
 		'password' 	=> 'password',
 		'database' 	=> 'database_name'
-  ),
+	),
 
-  // Dev database info
+	// Dev database info
 	'dev' => array(
-  	'server' 		=> 'localhost',
+		'server' 		=> 'localhost',
 		'user' 			=> 'username',
 		'password' 	=> 'password',
 		'database' 	=> 'database_name'
-  )
+	)
 
 );
 
@@ -34,7 +34,7 @@ $customDbConfig = array(
 if (is_array($customLocalDbConfig = @include(CRAFT_CONFIG_PATH . 'local/db.php')))
 {
 	$customGlobalDbConfig = array_merge($customDbConfig['*'], $customLocalDbConfig);
-  $customDbConfig['*'] = $customGlobalDbConfig;
+	$customDbConfig['*'] = $customGlobalDbConfig;
 }
 
 return $customDbConfig;
