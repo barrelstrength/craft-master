@@ -20,18 +20,19 @@ We've updated Craft to run comfortably in any environment that we send it to.  A
   - Set devMode to true
 
 
-## Custom .htaccess
-We've added a handful of things to our base .htaccess file. This assumes certain server settings are turned on and may throw errors if they are not.  If that sounds like a headache, you may just want to roll with the default .htaccess provided by Craft.
+## Customizable .htaccess
+We've added a handful of things to our base .htaccess file. Since many rules require certain server settings to be turned on and may throw errors if they are not, all rules except the default Craft .htaccess rules are commented out by default. You can enable them as you choose to in your own environment.
 
-- Example code to redirect public access to an offline page while updates are being made
-- Example code to password protect a single environment
+- Redirect public access to an offline page while updates are being made
+- Password protect a single environment
 - Set proper MIME type for all files
 - Set gzip compression rules
 - Set Expires headers
 - ETag removal
-- Remove www from URL
+- Remove www from beginning of URL
+- Force www at beginning of URL
 - Force SSL when using dashboard
-- Example code to remove trailing slashes from URL
+- Remove trailing slashes from end of URL
 - Prevent 404 errors for non-existing redirected folders
 - Set UTF-8 encoding
 - Add various security enhancements
