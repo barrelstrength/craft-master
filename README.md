@@ -1,17 +1,20 @@
 
 # Craft Master
-A custom, multi-environment setup for Craft CMS.
+Craft Master is designed to be a set of base templates and starter code for Craft CMS.  It is not meant to be used as is, but as a starting place for several different possible goals. 
+
+If you are looking for a basic Team Multi-Environment config, you may want to check out the more simple [Craft Multi-Environment Config](https://github.com/BarrelStrength/Craft-Multi-Environment-Config).
+
+Craft Master includes:
 
 ## Multi-environment Config
 We've updated Craft to run comfortably in any environment that we send it to.  A few changes have to be made to the primary index.php file and to the environment-specfic config and database files, and then you can work on localhost, staging, dev, production, or wherever else you fancy.
 
-- Moved system folder above web root
 - Added test for environment to /public_html/index.php
-- Define environment variable in index.php
-- Move plugin folder to just above web root for easier access
-- Move template folder to just above web root for easier access
-- Added folders for default environments: local, dev, live
-- Added copies of general.php and db.php in each environment folder
+- Override and define CRAFT_ENVIRONMENT variable in index.php
+- Move plugin folder to above web root for easier access
+- Move template folder to above web root for easier access
+- Added `craft/config/local` folder for local config settings
+- Added copy of general.php and db.php in `craft/config/local`
 - Updated /craft/config/general.php to merge in environment specific config settings
 - Updated /craft/config/db.php to merge in environment specific database settings
 - Moved some config overrides to /craft/config/general.php for easier access
@@ -36,5 +39,5 @@ We've added a handful of things to our base .htaccess file. Since many rules req
 - Prevent 404 errors for non-existing redirected folders
 - Set UTF-8 encoding
 - Add various security enhancements
-- Example code to setup relative 301 redirects that will work in any environment
+- Relative 301 redirects that will work in any environment
 - Remove index.php from the URL
