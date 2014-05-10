@@ -12,22 +12,23 @@ return array(
 	// Give us more useful error messages
 	'devMode'	=> true,
 	
-	// Route ALL of the emails that Craft
-	// sends to a single email address. 
-	'testToEmailAddress'	=> '',
+	// Have Craft send ALL emails to a single address
+	// 'testToEmailAddress'	=> '',
 
-	'translationDebugOutput'     	=> false,
-	'useCompressedJs'            	=> true,
-	'cacheDuration'              	=> 'P1D',
-	'cooldownDuration'           	=> 'PT5M',
-	'maxInvalidLogins'           	=> 5,
-	'invalidLoginWindowDuration' 	=> 'PT1H',
-	'phpMaxMemoryLimit'          	=> '256M',
+	// Some settings helpful for debugging 
+	// 'phpMaxMemoryLimit'          	=> '256M',
+	// 'backupDbOnUpdate'            => true,
+	// 'translationDebugOutput'     	=> false,
+	// 'useCompressedJs'            	=> true,
+	// 'cacheDuration'              	=> 'P1D',
 
-	// Member login info duration
+	// Make member login settings nice and trusting
 	// http://www.php.net/manual/en/dateinterval.construct.php
 	'userSessionDuration'           => 'P101Y',
 	'rememberedUserSessionDuration' => 'P101Y',
 	'rememberUsernameDuration'      => 'P101Y',
-
+	'invalidLoginWindowDuration'    => 'P101Y',
+	'cooldownDuration'              => 'PT1S',
+	'maxInvalidLogins'              => 101,
+	
 );

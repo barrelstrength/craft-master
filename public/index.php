@@ -5,11 +5,11 @@ $craftPath = '../craft';
 
 // Setup environment-friendly configs
 switch ($_SERVER['SERVER_NAME']) {		
-	case 'domain.com' :
+	case 'straightupcraft.com' :
 		define('CRAFT_ENVIRONMENT', 'live');
 		break;
 
-	case 'dev.domain.com' :
+	case 'dev.straightupcraft.com' :
 		define('CRAFT_ENVIRONMENT', 'dev');
 		break;
 
@@ -17,14 +17,6 @@ switch ($_SERVER['SERVER_NAME']) {
 		define('CRAFT_ENVIRONMENT', 'local');
 		break;
 }
-
-// Move plugins path to right above web root
-define('CRAFT_PLUGINS_PATH', realpath(dirname(__FILE__) . "/../plugins").'/');
-
-// Move templates path to right above web root
-define('CRAFT_TEMPLATES_PATH', realpath(dirname(__FILE__) . "/../templates").'/');
-
-
 
 // Do not edit below this line
 $path = rtrim($craftPath, '/').'/app/index.php';

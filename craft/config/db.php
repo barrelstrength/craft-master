@@ -9,24 +9,22 @@
 
 $customDbConfig = array(
 	
-	'*' => array(
-		// Use the same prefix in all environments
-		'tablePrefix' 	=> 'craft',
+	// Live Database Info
+  '*' => array(
+  	'tablePrefix' 	=> 'craft',
+  	'server' 		=> '',
+		'user' 			=> '',
+		'password' 	=> '',
+		'database' 	=> ''
+  ),
 
-		// Live database info
-		'server' 		=> 'localhost',
-		'user' 			=> 'username',
-		'password' 	=> 'password',
-		'database' 	=> 'database_name'
-	),
-
-	// Dev database info
+  // Dev Database Info
 	'dev' => array(
-		'server' 		=> 'localhost',
-		'user' 			=> 'username',
-		'password' 	=> 'password',
-		'database' 	=> 'database_name'
-	)
+		'server' 		=> '',
+		'user' 			=> '',
+		'password' 	=> '',
+		'database' 	=> ''
+  )
 
 );
 
