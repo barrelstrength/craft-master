@@ -10,6 +10,7 @@
 # http://buildwithcraft.com/help/craft-storage-gitignore
 # ------------------------------------------------------------
 /craft/storage/*
+!/craft/storage/.gitignore
 !/craft/storage/logo/*
 
 # MISC FILES
