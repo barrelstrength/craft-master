@@ -1,0 +1,14 @@
+{% set image = block.image.first() %}
+
+<figure class="{{ block.align }}">
+	
+	<img src="{{ image.getUrl() }}" width="{{ image.getWidth() }}" height="{{ image.getHeight() }}" alt="{{ image.filename }}" />
+
+	{% if block.caption %}
+	<figcaption>{{ block.caption }}</figcaption>
+	{% endif %}
+
+</figure>
+
+
+

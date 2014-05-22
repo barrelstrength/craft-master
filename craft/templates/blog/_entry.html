@@ -1,0 +1,21 @@
+{% extends "_layouts/base" %}
+
+{% block content %}
+
+<article>
+
+	<h1>{{ entry.title }}</h1>
+	
+	{# Output all of our matrix blocks
+	{% if matrixField|length %}
+		{% for block in matrixField %}
+			{% include "_partials/blocks/" ~ block.type %}
+		{% endfor %}
+	{% endif %}
+	#}
+	
+	<a href="/blog">&lang; Back to all posts</a>
+
+</article>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "_layouts/base" %}
+
+{# Prepare our pagination and archives #}
+{% set paginateBase = "/blog" %}
+
+{% if month is defined %}
+	{% set paginateBase = paginateBase ~ "/" ~ year ~ "/" ~ month %}
+  {% set beforeDate = year ~ '-' ~ month ~ '-01' %}
+  {% set afterDate = beforeDate|date_modify("+1 month")|date("Y-m") %}
+{% elseif year is defined %}
+	{% set paginateBase = paginateBase ~ "/" ~ year %}
+	{% set beforeDate = year ~ '-01-01' %}
+  {% set afterDate = beforeDate|date_modify("+1 year")|date("Y-m") %}
+{% else %}
+  {% set beforeDate = '' %}
+  {% set afterDate = '' %}
+{% endif %}
+
+{% set paginateBase = paginateBase ~ "/p" %}
+
+{% block content %}
+
+<section>
+
+	<h1>Blog</h1>
+
+	{% paginate craft.entries
+    .section('blog')
+    .after(beforeDate)
+    .before(afterDate)
+    .limit(10)
+    as entries 
+  %}
+
+		{% for entry in entries %}
+			
+			<article>
+
+				<h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+				<p>{{ entry.postDate|date("m . d . Y") }}</p>
+				
+				{# Output a body
+				{{ entry.body }} 
+				#}
+
+				{# Output all of our matrix blocks
+				{% if entry.matrixField|length %}
+					{% for block in entry.matrixField %}
+						{% include "_partials/blocks/" ~ block.type %}
+					{% endfor %}
+				{% endif %}
+				#}
+				
+			</article>
+		
+		{% endfor %}
+
+		{% include "_partials/pagination.html" %}
+		
+	{% endpaginate %}
+
+</section>
+
+<aside>
+	
+	{# Categories 
+	<section>
+	  
+	  <h3>Categories</h3>
+		
+	</section>
+	#}
+
+	{# Tags 
+	<section>
+	  
+	  <h3>Tags</h3>
+		
+	</section>
+	#}
+
+	{# Archive 
+	<section>
+	  
+	  <h3>Archive</h3>
+		
+	</section>
+	#}
+	 
+	<p class="rss"><a href="/blog/feed.atom">Feed</a></p>
+
+</aside>
+
+{% endblock %}
