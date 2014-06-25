@@ -34,8 +34,9 @@ $customConfig = array(
     // We can use these variables in the URL and Path settings within
     // the Craft Control Panel.  i.e. siteUrl => {siteUrl}, basePath => {basePath} 
   	'environmentVariables' => array(
-  	  'siteUrl'  => SITE_URL,
-      'basePath' => BASEPATH
+		'siteUrl'  => SITE_URL,
+		'basePath' => BASEPATH,
+		'webPath' => CRAFT_WEB_PATH
   	),
 
     // Triggers
