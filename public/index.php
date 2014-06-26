@@ -18,6 +18,8 @@ switch ($_SERVER['SERVER_NAME']) {
 		break;
 }
 
+define('CRAFT_WEB_PATH', $_SERVER["DOCUMENT_ROOT"]. '/');
+
 // Do not edit below this line
 $path = rtrim($craftPath, '/').'/app/index.php';
 
