@@ -1,0 +1,47 @@
+{
+  "name": "barrelstrength/craft-master",
+  "description": "Craft CMS Project",
+  "license": "proprietary",
+  "homepage": "https://craftcms.com/",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Barrel Strength",
+      "homepage": "https://www.barrelstrengthdesign.com/"
+    }
+  ],
+  "support": {
+    "email": "support@barrelstrengthdesign.com",
+    "issues": "https://github.com/barrelstrength/craft-master/issues",
+    "forum": "https://craftcms.stackexchange.com/",
+    "source": "https://github.com/barrelstrength/craft-master",
+    "docs": "https://github.com/barrelstrength/craft-master",
+    "rss": "https://craftcms.com/changelog.rss"
+  },
+  "require": {
+    "php": ">=7.0.0",
+    "craftcms/cms": "^3.0.0-RC7",
+    "vlucas/phpdotenv": "^2.4.0",
+    "roave/security-advisories": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.0"
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@composer dump-autoload -o",
+      "@php craft setup/welcome"
+    ]
+  }
+}
