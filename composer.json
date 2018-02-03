@@ -1,7 +1,7 @@
 {
   "name": "barrelstrength/craft-master",
   "description": "Craft CMS Project",
-  "license": "proprietary",
+  "license": "MIT",
   "homepage": "https://craftcms.com/",
   "type": "project",
   "authors": [
