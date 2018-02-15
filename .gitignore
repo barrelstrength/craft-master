@@ -1,17 +1,21 @@
 # LOCAL CONFIG SETTINGS
-# Exclude local config files so we don't overwrite other local setups.
-# Leave example files that can be copied to get setup
 # ------------------------------------------------------------
-/craft/config/local/*
-!/craft/config/local/db.php.example
-!/craft/config/local/general.php.example
+/config/local/*
+!/config/local/db.php.example
+!/config/local/general.php.example
 
-# CRAFT STORAGE
-# http://buildwithcraft.com/help/craft-storage-gitignore
+# CRAFT
 # ------------------------------------------------------------
-/craft/storage/*
-!/craft/storage/.gitignore
-!/craft/storage/logo/*
+/storage/*
+
+# DEVELOPMENT
+# ------------------------------------------------------------
+/vendor
+/bower_components/*
+/node_modules/*
+/build/*
+/yarn-error.log
+/npm-debug.log
 
 # MISC FILES
 # https://github.com/github/gitignore/tree/master/Global
@@ -28,5 +32,6 @@
 *.tmproject
 Thumbs.db
 /logs/*
+/node_modules/*
 
 
