@@ -17,6 +17,6 @@ return [
 	    'assets' => [
 	        'path' => '@webroot/assets/subfolder',
 	        'url' => '@web/assets/subfolder'
-	    ],
+	    ]
 	  ]
 ];

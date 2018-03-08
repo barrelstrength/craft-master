@@ -13,7 +13,6 @@ $customConfig = [
         'env'     => CRAFT_ENVIRONMENT,
         'siteUrl' => SITE_URL,
         'aliases' => [
-            '@siteUrl' => SITE_URL,
             '@svg' => CRAFT_BASE_PATH . '/web/assets/svgs'
         ],
         'securityKey' => 'ADD_SECURITY_KEY',
