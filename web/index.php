@@ -5,6 +5,7 @@
 
 // Set Environment
 switch ($_SERVER['HTTP_HOST']) {    
+  case 'www.website.com' :
   case 'website.com' :
     define('CRAFT_ENVIRONMENT', 'production');
     break;
