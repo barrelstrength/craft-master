@@ -15,7 +15,7 @@
     "issues": "https://github.com/barrelstrength/craft-master/issues",
     "source": "https://github.com/barrelstrength/craft-master",
     "docs": "https://github.com/barrelstrength/craft-master",
-    "forum": "https://craftcms.stackexchange.com/",
+    "forum": "https://craftcms.stackexchange.com/"
   },
   "require": {
     "craftcms/cms": "^3.0.0",
