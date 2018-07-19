@@ -40,7 +40,7 @@
       "@composer dump-autoload -o",
       "@php craft setup/welcome"
     ]
-  }
+  },
   "scripts": {
     "post-create-project-cmd": [
       "@php -r \"copy('config/local/db.example.php', 'config/local/db.php');\"",
