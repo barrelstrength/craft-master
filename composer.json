@@ -33,15 +33,6 @@
     }
   },
   "scripts": {
-    "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-    ],
-    "post-create-project-cmd": [
-      "@composer dump-autoload -o",
-      "@php craft setup/welcome"
-    ]
-  },
-  "scripts": {
     "post-create-project-cmd": [
       "@php -r \"copy('config/local/db.example.php', 'config/local/db.php');\"",
       "@php -r \"copy('config/local/general.example.php', 'config/local/general.php');\"",
