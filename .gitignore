@@ -1,12 +1,12 @@
 # LOCAL CONFIG SETTINGS
 # ------------------------------------------------------------
 /config/local/*
-!/config/local/db.php.example
-!/config/local/general.php.example
+!/config/local/*.example.php
 
-# CRAFT
+# CRAFT CMS
 # ------------------------------------------------------------
 /storage/*
+!/storage/rebrand/*
 
 # DEVELOPMENT
 # ------------------------------------------------------------
@@ -18,10 +18,15 @@
 /npm-debug.log
 
 # MISC FILES
-# https://github.com/github/gitignore/tree/master/Global
 # ------------------------------------------------------------
+!.gitignore
+!.gitkeep
 .cache
 .DS_Store
+Thumbs.db
+
+# Editors
+# ------------------------------------------------------------
 .idea
 .project
 .settings
@@ -30,8 +35,8 @@
 *.sublime-project
 *.tmproj
 *.tmproject
-Thumbs.db
-/logs/*
-/node_modules/*
-
-
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

@@ -1,28 +1,25 @@
 {
   "name": "barrelstrength/craft-master",
   "description": "Craft CMS Project",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "project"
+  ],
   "license": "MIT",
   "homepage": "https://craftcms.com/",
   "type": "project",
-  "authors": [
-    {
-      "name": "Barrel Strength",
-      "homepage": "https://www.barrelstrengthdesign.com/"
-    }
-  ],
   "support": {
     "email": "support@barrelstrengthdesign.com",
     "issues": "https://github.com/barrelstrength/craft-master/issues",
-    "forum": "https://craftcms.stackexchange.com/",
     "source": "https://github.com/barrelstrength/craft-master",
     "docs": "https://github.com/barrelstrength/craft-master",
-    "rss": "https://craftcms.com/changelog.rss"
+    "forum": "https://craftcms.stackexchange.com/",
   },
   "require": {
-    "php": ">=7.0.0",
-    "craftcms/cms": "^3.0.0-RC7",
-    "vlucas/phpdotenv": "^2.4.0",
-    "roave/security-advisories": "dev-master"
+    "craftcms/cms": "^3.0.0",
+    "vlucas/phpdotenv": "^2.4.0"
   },
   "autoload": {
     "psr-4": {
@@ -40,6 +37,18 @@
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],
     "post-create-project-cmd": [
+      "@composer dump-autoload -o",
+      "@php craft setup/welcome"
+    ]
+  }
+  "scripts": {
+    "post-create-project-cmd": [
+      "@php -r \"copy('config/local/db.example.php', 'config/local/db.php');\"",
+      "@php -r \"copy('config/local/general.example.php', 'config/local/general.php');\"",
+      "@php -r \"unlink('composer.json');\"",
+      "@php -r \"unlink('LICENSE.md');\"",
+      "@php -r \"unlink('README.md');\"",
+      "@php -r \"rename('composer.json.default', 'composer.json');\"",
       "@composer dump-autoload -o",
       "@php craft setup/welcome"
     ]

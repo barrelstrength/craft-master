@@ -1,8 +1,8 @@
 <?php
 /**
  * General Configuration
- * 
- * See configuration options: 
+ *
+ * See configuration options:
  * vendor/craftcms/cms/src/config/GeneralConfig.php
  */
 
@@ -19,12 +19,12 @@ $customConfig = [
 
         'devMode' => false,
         'isSystemOn' => false,
+        'allowUpdates' => false,
         'backupOnUpdate' => false,
         'enableTemplateCaching' => false,
         'generateTransformsBeforePageLoad' => true,
         'omitScriptNameInUrls' => true,
-        
-        'useEmailAsUsername' => true,
+
         'tokenParam' => 't',
         'defaultSearchTermOptions' => [
             'subLeft'  => true,
@@ -41,11 +41,26 @@ $customConfig = [
     // Production Environment
     'production' => [
         'isSystemOn' => true,
-        'enableTemplateCaching' => true,
+        'enableTemplateCaching' => true
+    ],
+
+    // Dev Environment
+    'dev'   => [
+        'isSystemOn' => false,
+        'devMode' => true,
+        'enableTemplateCaching' => false,
+    ],
+
+    // Local Environment
+    'local' => [
+        'isSystemOn' => true,
+        'allowUpdates' => true,
+        'devMode' => true,
+        'backupOnUpdate' => true,
     ]
 ];
 
-// If a local config file exists, merge any local config settings 
+// If a local config file exists, merge any local config settings
 if (is_array($customLocalConfig = @include(CRAFT_BASE_PATH . '/config/local/general.php')))
 {
   $customGlobalConfig = array_merge($customConfig['*'], $customLocalConfig);

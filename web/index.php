@@ -1,10 +1,7 @@
 <?php
-/**
- * Craft web bootstrap file
- */
 
 // Set Environment
-switch ($_SERVER['HTTP_HOST']) {    
+switch ($_SERVER['HTTP_HOST']) {
   case 'www.website.com' :
   case 'website.com' :
     define('CRAFT_ENVIRONMENT', 'production');

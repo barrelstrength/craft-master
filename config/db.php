@@ -2,8 +2,8 @@
 /**
  * Database Configuration
  * Configure all environments
- * 
- * See configuration options: 
+ *
+ * See configuration options:
  * vendor/craftcms/cms/src/config/DbConfig.php
  */
 
@@ -25,15 +25,7 @@ $customDbConfig = [
 		'database' => ''
 	],
 
-	// Staging Environments
-	'staging' => [
-		'server'   => 'localhost',
-		'user'     => '',
-		'password' => '',
-		'database' => '',
-	],
-
-	// Dev Environments
+	// Dev Environment
 	'dev'     => [
 		'server'   => 'localhost',
 		'user'     => '',
