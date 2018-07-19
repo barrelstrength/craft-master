@@ -17,7 +17,7 @@
   "scripts": {
     "post-root-package-install": [
       "@php -r \"copy('config/local/db.example.php', 'config/local/db.php');\"",
-      "@php -r \"copy('config/local/general.example.php', 'config/local/general.php');\"",
+      "@php -r \"copy('config/local/general.example.php', 'config/local/general.php');\""
     ]
   }
 }
