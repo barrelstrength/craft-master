@@ -17,8 +17,8 @@
  * your config/ folder, alongside this one.
  */
 return [
-    'modules' => [
-        'my-module' => \modules\Module::class,
-    ],
+    // 'modules' => [
+    //     'my-module' => \modules\Module::class,
+    // ],
     //'bootstrap' => ['my-module'],
 ];
