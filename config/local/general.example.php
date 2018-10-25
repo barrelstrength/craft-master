@@ -1,15 +1,17 @@
 <?php
 /**
  * Local Config Override
- * 
+ *
  * Overrides added here will get appended to the end of the
  * custom config array for all environments: '*'
  */
 
 return [
-	'devMode'          => true,
-	'allowAutoUpdates' => true,
-  // 'backupDbOnUpdate' => false,
+    'allowUpdates' => true,
+	'devMode' => true,
+    'isSystemOn' => false,
+
+  // 'backupOnUpdate' => false,
   // 'phpMaxMemoryLimit' => '1G',
 
   // Send emails that use the Craft Email Service to this address

@@ -16,9 +16,10 @@
  * *only* console requests, create an app.web.php or app.console.php file in
  * your config/ folder, alongside this one.
  */
+
 return [
-    // 'modules' => [
-    //     'my-module' => \modules\Module::class,
-    // ],
+    'modules' => [
+        'my-module' => \modules\Module::class,
+    ],
     //'bootstrap' => ['my-module'],
 ];

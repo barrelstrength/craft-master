@@ -1,35 +1,28 @@
 <?php
+/**
+ * Craft web bootstrap file
+ */
 
-// Set Environment
-switch ($_SERVER['HTTP_HOST']) {
-  case 'www.website.com' :
-  case 'website.com' :
-    define('CRAFT_ENVIRONMENT', 'production');
-    break;
-  case 'dev.website.com' :
-    define('CRAFT_ENVIRONMENT', 'dev');
-    break;
-  default :
-    define('CRAFT_ENVIRONMENT', 'local');
-    break;
-}
+// Console requests can define HTTP_HOST in the .env file
+$httpHost = getenv('HTTP_HOST') ?: $_SERVER['HTTP_HOST'];
+define('HTTP_HOST', $httpHost);
 
-// Set Scheme
-if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
-    ## Support proxy SSL
-    define('URI_SCHEME', $_SERVER['HTTP_X_FORWARDED_PROTO'] . '://');
-}
-else if (isset($_SERVER['HTTPS'])) {
-    ## Standard SSL support
-    define('URI_SCHEME', 'https://');
-}
-else {
-    ## Standard without SSL
-    define('URI_SCHEME', 'http://');
+// Set Environment for web requests
+switch (HTTP_HOST) {
+    case 'www.website.com' :
+    case 'website.com' :
+        define('CRAFT_ENVIRONMENT', 'production');
+        break;
+    case 'dev.website.com' :
+        define('CRAFT_ENVIRONMENT', 'dev');
+        break;
+    default :
+        define('CRAFT_ENVIRONMENT', 'local');
+        break;
 }
 
-// Set Site URL
-define('SITE_URL', URI_SCHEME . $_SERVER['HTTP_HOST'] . '/');
+// Default Craft Config
+// ------------------------------------------------------------
 
 // Set path constants
 define('CRAFT_BASE_PATH', dirname(__DIR__));
