@@ -8,22 +8,22 @@
 
 return [
     'allowUpdates' => true,
-	'devMode' => true,
+    'devMode' => true,
     'isSystemOn' => false,
 
-  // 'backupOnUpdate' => false,
-  // 'phpMaxMemoryLimit' => '1G',
+    // 'backupOnUpdate' => false,
+    // 'phpMaxMemoryLimit' => '1G',
 
-  // Send emails that use the Craft Email Service to this address
-  // 'testToEmailAddress' => '',
+    // Send emails that use the Craft Email Service to this address
+    // 'testToEmailAddress' => '',
 
-  // Make it easier to login
-  // http://www.php.net/manual/en/dateinterval.construct.php
-  'elevatedSessionDuration'       => 'P101Y',
-  'userSessionDuration'           => 'P101Y',
-  'rememberedUserSessionDuration' => 'P101Y',
-  'rememberUsernameDuration'      => 'P101Y',
-  'invalidLoginWindowDuration'    => 'P101Y',
-  'cooldownDuration'              => 'PT1S',
-  'maxInvalidLogins'              => 101,
+    // Make it easier to login
+    // http://www.php.net/manual/en/dateinterval.construct.php
+    'elevatedSessionDuration' => 'P101Y',
+    'userSessionDuration' => 'P101Y',
+    'rememberedUserSessionDuration' => 'P101Y',
+    'rememberUsernameDuration' => 'P101Y',
+    'invalidLoginWindowDuration' => 'P101Y',
+    'cooldownDuration' => 'PT1S',
+    'maxInvalidLogins' => 101,
 ];

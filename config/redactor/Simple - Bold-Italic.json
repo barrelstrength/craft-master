@@ -1,7 +1,10 @@
 {
-  "buttons": ["bold", "italic"],
-  "toolbarFixed": true,
-  "pastePlainText": true,
-  "pasteImages": false,
-  "pasteLinks": false
+    "buttons": [
+        "bold",
+        "italic"
+    ],
+    "toolbarFixed": true,
+    "pastePlainText": true,
+    "pasteImages": false,
+    "pasteLinks": false
 }

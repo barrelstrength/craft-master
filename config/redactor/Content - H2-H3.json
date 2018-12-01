@@ -1,10 +1,23 @@
 {
-  "buttons": ["formatting", "bold", "italic", "unorderedlist", "link", "html"],
-  "formatting": ["p", "h2", "h3"],
-  "plugins": ["fullscreen"],
-  "toolbarFixed": true,
-  "pastePlainText": true,
-  "pasteImages": false,
-  "pasteLinks": false,
-  "linkNewTab": true
+    "buttons": [
+        "formatting",
+        "bold",
+        "italic",
+        "unorderedlist",
+        "link",
+        "html"
+    ],
+    "formatting": [
+        "p",
+        "h2",
+        "h3"
+    ],
+    "plugins": [
+        "fullscreen"
+    ],
+    "toolbarFixed": true,
+    "pastePlainText": true,
+    "pasteImages": false,
+    "pasteLinks": false,
+    "linkNewTab": true
 }

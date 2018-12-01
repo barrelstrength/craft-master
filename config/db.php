@@ -18,26 +18,26 @@ $customDbConfig = [
     ],
 
     // Production Environment
-    'production'    => [
-        'server'   => 'localhost',
-        'user'     => '',
+    'production' => [
+        'server' => 'localhost',
+        'user' => '',
         'password' => '',
         'database' => ''
     ],
 
     // Dev Environment
-    'dev'     => [
-        'server'   => 'localhost',
-        'user'     => '',
+    'dev' => [
+        'server' => 'localhost',
+        'user' => '',
         'password' => '',
         'database' => '',
     ]
 ];
 
 ## If a local db file exists, merge the local db settings
-if (is_array($customLocalDbConfig = @include(CRAFT_BASE_PATH . '/config/local/db.php'))) {
+if (is_array($customLocalDbConfig = @include(CRAFT_BASE_PATH.'/config/local/db.php'))) {
     $customGlobalDbConfig = array_merge($customDbConfig['*'], $customLocalDbConfig);
-    $customDbConfig['*']  = $customGlobalDbConfig;
+    $customDbConfig['*'] = $customGlobalDbConfig;
 }
 
 return $customDbConfig;
