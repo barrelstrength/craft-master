@@ -22,17 +22,19 @@ if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
 // Set Site URL
 define('SITE_URL', URI_SCHEME.HTTP_HOST.'/');
 
+$environment = '';
+
 // Set Environment for web requests
 switch (HTTP_HOST) {
     case 'www.website.com' :
     case 'website.com' :
-        define('CRAFT_ENVIRONMENT', 'production');
+        $environment = 'production';
         break;
     case 'dev.website.com' :
-        define('CRAFT_ENVIRONMENT', 'dev');
+        $environment = 'dev';
         break;
     default :
-        define('CRAFT_ENVIRONMENT', 'local');
+        $environment = 'local';
         break;
 }
 
@@ -52,6 +54,6 @@ if (file_exists(CRAFT_BASE_PATH.'/.env')) {
 }
 
 // Load and run Craft
-define('CRAFT_ENVIRONMENT', getenv('ENVIRONMENT') ?: 'production');
+define('CRAFT_ENVIRONMENT', getenv('ENVIRONMENT') ?: $environment);
 $app = require CRAFT_VENDOR_PATH.'/craftcms/cms/bootstrap/web.php';
 $app->run();
