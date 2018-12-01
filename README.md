@@ -50,3 +50,6 @@ Have a helper module/class to help update arrays in config files
 		'bootstrap' => ['my-module', 'my-new-module'],
 		'securityKey' => 'ADD_SECURITY_KEY',
 	And we can include this module as the first dependency in our project.
+
+
+We don't exclude the vendor folder in gitignore.
