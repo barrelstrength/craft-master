@@ -1,22 +1,18 @@
-# LOCAL CONFIG SETTINGS
+# DEVELOPMENT
 # ------------------------------------------------------------
 /config/local/*
 !/config/local/*.example.php
-
-# CRAFT CMS
-# ------------------------------------------------------------
-/storage/*
-!/storage/rebrand/*
-
-# DEVELOPMENT
-# ------------------------------------------------------------
 /.env
-/vendor
 /bower_components/*
 /node_modules/*
 /build/*
 /yarn-error.log
 /npm-debug.log
+
+# CRAFT CMS
+# ------------------------------------------------------------
+/storage/*
+!/storage/rebrand/*
 
 # MISC FILES
 # ------------------------------------------------------------
