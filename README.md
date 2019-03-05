@@ -1,6 +1,22 @@
 # Craft Master
 
-Craft Master is a starter project for Craft CMS. 
+Craft Master is a starter project for Craft CMS.
+
+## Setup
+
+To create a new project:
+
+```
+composer create-project barrelstrength/craft-master <path>
+```
+
+To get setup with a Craft CMS project using Craft Master:
+
+1. Clone the repository to your local environment
+2. Copy `.env.example` => `.env` and add your `ENVIRONMENT` and database connection info
+3. Copy `config/local/general.example.php` => `config/local/general.php` and update as desired
+
+## Context
 
 Craft provides a framework for configuring a project across multiple environments using environment variables (at the infrastructure level) and multi-environment configs (within the application). Craft Master is designed to work out of the box with the recommended Craft configuration and add flexibility to support a broader range of application configurations.
 
@@ -16,23 +32,21 @@ Craft Master updates the default Craft starter project in the following ways:
 - Updates default environment conventions to assume three environments: `local`, `dev`, `production`    
     - Updates `.env` to use `local` as the default `ENVIRONMENT` variable
 - Enhances support for application-level configuration
-    - Updates `web/index.php` to include `.multienv.php` 
-    - Adds support for dynamically setting the Craft Environment and Site URL in `.multienv.php` 
-    - Updates `config/general.php` to support a local override `config/local/general.php` that can be excluded from the repo
-    - Adds default `config/local/general.php` with extended login times and several development considerations
-    - Updates `config/db.php` to assume multiple environments and support both `.env` and multi-environment config workflows
+    - Updates `web/index.php` to include `.multienv.php` and dynamically set the `ENVIRONMENT` and `SITE_URL` variables
+    - Updates `.env` settings  in `config/db.php` to use multi-environment config and fallback to default settings if being used with application level configuration
 - Updates `config/general.php` to:
-    - dynamically set SITE_URL
-    - dynamically set baseCpUrl
-    - dynamically set @web
-    - various other config preferences
-    - Support using a Security Key in .env or via Multi-Env
-    - Allow overrides in a config/local/general.php file.
-- Updated default Redactor Configs
+    - Sets `env`, `baseCpUrl`, `siteUrl`, and `@web` alias dynamically
+    - Updates `defaultSearchTermOptions` to allow fuzzy searches
+    - Sets `tokenParam` to use `t`
+    - Updates `securityKey` to support both `.env` or fallback to a value defined in `config/general.php`
+    - Sets `userSessionDuration`, `rememberedUserSessionDuration`, and `rememberUsernameDuration` to one month 
+    - Updates `config/general.php` to support a local override file `config/local/general.php` that can be excluded from the repo
+    - Adds default `config/local/general.php` with extended login times and several development considerations
+- Updated default Redactor Configs 
     - Simple - Bold-Italic.json
     - Content - No Headings.json
     - Content - H2-H3.json   
-- Adds a 503 page that includes a login form
+- Adds a front-end login form for users when a site is offline via `templates/503.twig`
 
 ## Considerations
 
@@ -57,10 +71,3 @@ Alongside these conventions, Craft Master sets the `@web` alias dynamically, to 
 The default `config/db.php` has been updated to work in concert with `.env` so it's easier to use the recommended Craft `.env` alongside alternative workflows without the need to define some variables multiple times. 
 
 For local development, define your database credentials in the `.env`. In other environments, you can choose to use `.env` or a multi-environment application configuration.
-
-## Setup
-
-To setup a Craft project using Craft Master in your local environment, pull down the repository and:
-
-1. Copy `.env.example` => `.env` and your `ENVIRONMENT` and database connection info
-2. Copy `config/local/general.example.php` => `config/local/general.php` and update as desired

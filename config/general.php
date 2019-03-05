@@ -15,7 +15,7 @@ $customConfig = [
 
         // Environment
         'env' => CRAFT_ENVIRONMENT,
-        'baseCpUrl'   => SITE_URL,
+        'baseCpUrl' => SITE_URL,
         'siteUrl' => SITE_URL,
 
         // Paths
