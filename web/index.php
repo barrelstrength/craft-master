@@ -15,7 +15,7 @@ if (file_exists(CRAFT_BASE_PATH.'/.env')) {
     (new Dotenv\Dotenv(CRAFT_BASE_PATH))->load();
 }
 
-// Add support for BSD Multi-Env Config
+// Add support for defining additional variables
 // https://github.com/barrelstrength/craft-master
 require CRAFT_BASE_PATH.'/.multienv.php';
 

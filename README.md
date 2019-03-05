@@ -10,6 +10,10 @@ To create a new project:
 composer create-project barrelstrength/craft-master <path>
 ```
 
+Follow the Craft CMS docs [Installation Instructions](https://docs.craftcms.com/v3/installation.html) as appropriate.
+
+----
+
 To get setup with a Craft CMS project using Craft Master:
 
 1. Clone the repository to your local environment
