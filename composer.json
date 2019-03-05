@@ -1,6 +1,7 @@
 {
     "name": "barrelstrength/craft-master",
     "description": "Craft CMS Project",
+    "version": "2.0.0-beta.1",
     "keywords": [
         "craft",
         "cms",
@@ -35,11 +36,10 @@
     "scripts": {
         "post-create-project-cmd": [
             "@php -r \"copy('.env.example', '.env');\"",
-            "@php -r \"copy('config/local/db.example.php', 'config/local/db.php');\"",
             "@php -r \"copy('config/local/general.example.php', 'config/local/general.php');\"",
-            "@php -r \"unlink('composer.json');\"",
             "@php -r \"unlink('LICENSE.md');\"",
             "@php -r \"unlink('README.md');\"",
+            "@php -r \"unlink('composer.json');\"",
             "@php -r \"rename('composer.json.default', 'composer.json');\"",
             "@composer dump-autoload -o",
             "@php craft setup/welcome"
