@@ -3,44 +3,6 @@
  * Craft web bootstrap file
  */
 
-// Console requests can define HTTP_HOST in the .env file
-$httpHost = getenv('HTTP_HOST') ?: $_SERVER['HTTP_HOST'];
-define('HTTP_HOST', $httpHost);
-
-// Set Scheme
-if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
-    ## Support proxy SSL
-    define('URI_SCHEME', $_SERVER['HTTP_X_FORWARDED_PROTO'].'://');
-} else if (isset($_SERVER['HTTPS'])) {
-    ## Standard SSL support
-    define('URI_SCHEME', 'https://');
-} else {
-    ## Standard without SSL
-    define('URI_SCHEME', getenv('URI_SCHEME') ?: 'http://');
-}
-
-// Set Site URL
-define('SITE_URL', URI_SCHEME.HTTP_HOST.'/');
-
-$environment = '';
-
-// Set Environment for web requests
-switch (HTTP_HOST) {
-    case 'www.website.com' :
-    case 'website.com' :
-        $environment = 'production';
-        break;
-    case 'dev.website.com' :
-        $environment = 'dev';
-        break;
-    default :
-        $environment = 'local';
-        break;
-}
-
-// Default Craft Config
-// ------------------------------------------------------------
-
 // Set path constants
 define('CRAFT_BASE_PATH', dirname(__DIR__));
 define('CRAFT_VENDOR_PATH', CRAFT_BASE_PATH.'/vendor');
@@ -53,7 +15,11 @@ if (file_exists(CRAFT_BASE_PATH.'/.env')) {
     (new Dotenv\Dotenv(CRAFT_BASE_PATH))->load();
 }
 
+// Add support for BSD Multi-Env Config
+// https://github.com/barrelstrength/craft-master
+require CRAFT_BASE_PATH.'/.multienv.php';
+
 // Load and run Craft
-define('CRAFT_ENVIRONMENT', getenv('ENVIRONMENT') ?: $environment);
+define('CRAFT_ENVIRONMENT', getenv('ENVIRONMENT') ?: 'production');
 $app = require CRAFT_VENDOR_PATH.'/craftcms/cms/bootstrap/web.php';
 $app->run();

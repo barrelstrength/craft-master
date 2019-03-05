@@ -17,6 +17,7 @@
   "scripts": {
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+      "@php -r \"file_exists('config/local/general.example.php') || copy('config/local/general.example.php', 'config/local/general.php');\""
     ]
   }
 }

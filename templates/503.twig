@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ "Service Unavailable"|t }}</title>
+    <style>
+        body, html {
+            background: #ebedef;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+            font-family: arial, sans-serif;
+        }
+
+        body .message-container {
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body .message {
+            background-color: #fff;
+            top: 50%;
+            padding: 24px;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: auto;
+            margin-right: auto;
+            width: 320px;
+            border-radius: 5px;
+            box-shadow: 0 0 0 1px #e3e5e8;
+        }
+
+        h2 {
+            margin: 14px 0;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h3 {
+            margin-bottom: 5px;
+        }
+
+        form {
+            border-top: 1px solid #cecece;
+            border-bottom: 1px solid #eee;
+        }
+
+        form input {
+            font-size: 16px;
+            padding: 3px 5px;
+        }
+
+        .soft {
+            color: #aaa;
+            font-style: italic;
+            font-weight: 200;
+        }
+    </style>
+</head>
+<body>
+
+<main class="message-container">
+    <div class="message">
+
+        <form method="post" accept-charset="UTF-8">
+            {{ csrfInput() }}
+            <input type="hidden" name="action" value="users/login">
+
+            <h3><label for="loginName">Username</label></h3>
+            <input id="loginName" type="text" name="loginName"
+                   value="">
+
+            <h3><label for="password">Password</label></h3>
+            <input id="password" type="password" name="password">
+
+            <p><input type="submit" value="Login"></p>
+
+            {% if errorMessage is defined %}
+                <p>{{ errorMessage }}</p>
+            {% endif %}
+        </form>
+
+        <p class="soft">{{ "The site is temporarily offline for maintenance. Please try again later."|t }}</p>
+    </div>
+</main>
+
+
+</body>
+</html>

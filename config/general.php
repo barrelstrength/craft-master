@@ -2,8 +2,10 @@
 /**
  * General Configuration
  *
- * See configuration options:
- * vendor/craftcms/cms/src/config/GeneralConfig.php
+ * All of your system's general configuration settings go in here. You can see a
+ * list of the available settings in vendor/craftcms/cms/src/config/GeneralConfig.php.
+ *
+ * @see \craft\config\GeneralConfig
  */
 
 $customConfig = [
@@ -11,16 +13,10 @@ $customConfig = [
     // All Environments
     '*' => [
 
-        // Development Defaults
-        'devMode' => false,
-        'enableTemplateCaching' => false,
-        'isSystemOn' => false,
-        'useProjectConfigFile' => true,
-
+        // Environment
         'env' => CRAFT_ENVIRONMENT,
-        'siteUrl' => SITE_URL,
         'baseCpUrl'   => SITE_URL,
-        'securityKey' => getenv('SECURITY_KEY') ?: 'ADD_SECURITY_KEY',
+        'siteUrl' => SITE_URL,
 
         // Paths
         'aliases' => [
@@ -28,15 +24,14 @@ $customConfig = [
         ],
 
         // Application
-        'allowUpdates' => false,
-        'backupOnUpdate' => false,
         'defaultSearchTermOptions' => [
             'subLeft' => true,
             'subRight' => true
         ],
-
         'omitScriptNameInUrls' => true,
+        'securityKey' => getenv('SECURITY_KEY') ?: 'ADD_SECURITY_KEY',
         'tokenParam' => 't',
+        'useProjectConfigFile' => true,
 
         // Users
         // http://www.php.net/manual/en/dateinterval.construct.php
@@ -48,9 +43,6 @@ $customConfig = [
     // Production Environment
     'production' => [
         'allowAdminChanges' => false,
-        'devMode' => false,
-        'enableTemplateCaching' => true,
-        'isSystemOn' => true,
     ],
 
     // Dev Environment

@@ -7,11 +7,11 @@
  */
 
 return [
-    'allowUpdates' => true,
+    'backupOnUpdate' => false,
     'devMode' => true,
+    'enableTemplateCaching' => false,
     'isSystemOn' => false,
 
-    // 'backupOnUpdate' => false,
     // 'phpMaxMemoryLimit' => '1G',
 
     // Send emails that use the Craft Email Service to this address
