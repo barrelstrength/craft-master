@@ -15,17 +15,17 @@ $customConfig = [
         'devMode' => false,
         'enableTemplateCaching' => false,
         'isSystemOn' => false,
+        'useProjectConfigFile' => true,
+
+        'env' => CRAFT_ENVIRONMENT,
+        'siteUrl' => SITE_URL,
+        'baseCpUrl'   => SITE_URL,
+        'securityKey' => getenv('SECURITY_KEY') ?: 'ADD_SECURITY_KEY',
 
         // Paths
         'aliases' => [
-            '@svg' => CRAFT_BASE_PATH.'/web/assets/svgs'
+            '@web' => SITE_URL
         ],
-        'env' => CRAFT_ENVIRONMENT,
-        'siteUrl' => SITE_URL,
-        // 'siteUrl' => [
-        //     'siteA' => 'https://site-a.com/',
-        //     'siteB' => 'https://site-b.com/',
-        // ],
 
         // Application
         'allowUpdates' => false,
@@ -34,8 +34,8 @@ $customConfig = [
             'subLeft' => true,
             'subRight' => true
         ],
+
         'omitScriptNameInUrls' => true,
-        'securityKey' => 'ADD_SECURITY_KEY',
         'tokenParam' => 't',
 
         // Users
@@ -47,6 +47,7 @@ $customConfig = [
 
     // Production Environment
     'production' => [
+        'allowAdminChanges' => false,
         'devMode' => false,
         'enableTemplateCaching' => true,
         'isSystemOn' => true,
@@ -54,6 +55,7 @@ $customConfig = [
 
     // Dev Environment
     'dev' => [
+        'allowAdminChanges' => false,
         'devMode' => true,
         'enableTemplateCaching' => false,
         'isSystemOn' => false,
