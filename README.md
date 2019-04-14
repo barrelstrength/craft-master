@@ -60,7 +60,7 @@ Craft Master prefers to keep all project files in the repository and includes th
 
 ### Dynamic environment variables
 
-Craft Master updates `web/index.php` to include `.multienv.php` which adds support for defining the `ENVIRONMENT` and `SITE_URL` variables as part of the web request. The `ENVIRONMENT` and `SITE_URL` variables are used in the `config/general.php` file to help define several other settings.
+Craft Master updates `web/index.php` to include `config/multienv.php` which adds support for defining the `ENVIRONMENT` and `SITE_URL` variables as part of the web request. The `ENVIRONMENT` and `SITE_URL` variables are used in the `config/general.php` file to help define several other settings.
 
 ### Site URL and @web
 

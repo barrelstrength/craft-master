@@ -17,7 +17,7 @@ if (file_exists(CRAFT_BASE_PATH.'/.env')) {
 
 // Add support for defining additional variables
 // https://github.com/barrelstrength/craft-master
-require CRAFT_BASE_PATH.'/.multienv.php';
+require CRAFT_BASE_PATH.'/config/multienv.php';
 
 // Load and run Craft
 define('CRAFT_ENVIRONMENT', getenv('ENVIRONMENT') ?: 'production');
