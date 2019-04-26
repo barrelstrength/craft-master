@@ -31,7 +31,6 @@ $customConfig = [
         'omitScriptNameInUrls' => true,
         'securityKey' => getenv('SECURITY_KEY') ?: 'ADD_SECURITY_KEY',
         'tokenParam' => 't',
-        'useProjectConfigFile' => true,
 
         // Users
         // http://www.php.net/manual/en/dateinterval.construct.php
@@ -42,12 +41,11 @@ $customConfig = [
 
     // Production Environment
     'production' => [
-        'allowAdminChanges' => false,
+
     ],
 
     // Dev Environment
     'dev' => [
-        'allowAdminChanges' => false,
         'devMode' => true,
         'enableTemplateCaching' => false,
         'isSystemOn' => false,
