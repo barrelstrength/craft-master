@@ -1,7 +1,7 @@
 {
     "name": "barrelstrength/craft-master",
     "description": "Craft CMS Project",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "keywords": [
         "craft",
         "cms",
@@ -19,7 +19,7 @@
         "forum": "https://craftcms.stackexchange.com/"
     },
     "require": {
-        "craftcms/cms": "^3.0.0",
+        "craftcms/cms": "^3.1.0",
         "vlucas/phpdotenv": "^2.4.0"
     },
     "autoload": {
