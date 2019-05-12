@@ -11,11 +11,11 @@
 
 # CRAFT CMS
 # ------------------------------------------------------------
-/craft/storage/backups/*
-/craft/storage/composer-backups/*
-/craft/storage/config-backups/*
-/craft/storage/logs/*
-/craft/storage/runtime/*
+/storage/backups/*
+/storage/composer-backups/*
+/storage/config-backups/*
+/storage/logs/*
+/storage/runtime/*
 /web/cpresources/*
 
 # MISC FILES
