@@ -51,6 +51,7 @@ Craft Master updates the default Craft starter project in the following ways:
     - Content - No Headings.json
     - Content - H2-H3.json   
 - Adds a front-end login form for users when a site is offline via `templates/503.twig`
+- Adds `CraftTwigAutoCompleteExtension.php`
 
 ## Considerations
 
