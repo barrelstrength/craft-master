@@ -1,6 +1,23 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Determine whether request is made with SSL
+    RewriteCond %{HTTP:CF-Visitor} '"scheme":"https"' [OR]
+    RewriteCond %{HTTP:X-Forwarded-Proto} =https [OR]
+    RewriteCond %{HTTPS} =on
+    RewriteRule ^(.*)$ - [env=REQUEST_PROTOCOL:https]
+
+    RewriteCond %{ENV:REQUEST_PROTOCOL} !=https
+    RewriteRule ^(.*)$ - [env=REQUEST_PROTOCOL:http]
+
+    ## Remove "www" subdomain if present
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+    ## Force SSL connections
+    RewriteCond %{ENV:REQUEST_PROTOCOL} !=https
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
     # Send would-be 404 requests to Craft
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
