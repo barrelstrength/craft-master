@@ -3,7 +3,6 @@
 /config/local/*
 !/config/local/*.example.php
 /.env
-/bower_components/*
 /node_modules/*
 /build/*
 /yarn-error.log
