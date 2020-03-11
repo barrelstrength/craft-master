@@ -13,6 +13,8 @@ $customConfig = [
     // All Environments
     '*' => [
 
+        'useProjectConfigFile' => true,
+
         // Environment
         'env' => CRAFT_ENVIRONMENT,
         'baseCpUrl' => SITE_URL,
