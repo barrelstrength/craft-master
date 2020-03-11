@@ -13,28 +13,24 @@ return [
     // All Environments
     '*' => [
         'driver' => getenv('DB_DRIVER') ?: 'mysql',
-        'server' => getenv('DB_SERVER') ?: 'localhost',
-        'port' => getenv('DB_PORT') ?: '3306',
+        'dsn' => getenv('DB_DSN') ?: '',
         'user' => getenv('DB_USER') ?: '',
         'password' => getenv('DB_PASSWORD') ?: '',
-        'database' => getenv('DB_DATABASE') ?: '',
         'schema' => getenv('DB_SCHEMA') ?: 'public',
         'tablePrefix' => getenv('DB_TABLE_PREFIX') ?: '',
     ],
 
     // Production Environment
     //'production' => [
-    //    'server'   => 'localhost',
+    //    'dsn'   => '',
     //    'user'     => '',
-    //    'password' => '',
-    //    'database' => ''
+    //    'password' => ''
     //],
 
     // Dev Environment
     //'dev' => [
-    //    'server'   => 'localhost',
+    //    'dsn'   => '',
     //    'user'     => '',
-    //    'password' => '',
-    //    'database' => '',
+    //    'password' => ''
     //]
 ];
