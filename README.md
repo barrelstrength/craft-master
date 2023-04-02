@@ -1,3 +1,9 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+A lot has changed since this repo was created. Setting this to read-only as a reference but you'll likely be much better served by a more modern workflow these days.
+
+----
+
 # Craft Master
 
 Craft Master is a starter project for Craft CMS.
